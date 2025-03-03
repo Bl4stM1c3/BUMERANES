@@ -1,0 +1,26 @@
+#Posible solucion al ejercicio 45 de https://retosdeprogramacion.com/ejercicios
+#Crea una función que retorne el número total de bumeranes de
+# * un array de números enteros e imprima cada uno de ellos.
+# * - Un bumerán (búmeran, boomerang) es una secuencia formada por 3 números
+# *   seguidos, en el que el primero y el último son iguales, y el segundo
+# *   es diferente. Por ejemplo [2, 1, 2].
+# * - En el array [2, 1, 2, 3, 3, 4, 2, 4] hay 2 bumeranes ([2, 1, 2]
+# *   y [4, 2, 4]).
+
+
+def bumeranes(array):
+  #Declaramos las variables
+  bumeranes = []
+
+  for i in range(len(array)-2):
+    if array[i]==array[i+2] and array[i] != array[i+1]: #Si un numero es igual a 2 posiciones a la derecha y diferente al siguiente en la lista
+      bumeranes.append(array[i:i+3])
+
+  for bumeran in bumeranes:
+      #Mostramos los bumeranes por pantalla
+      print(bumeran)
+
+  if bumeran:
+    return f"Hay {len(bumeranes)} bumeranes en la lista de numeros {array}"
+  return f"No hay bumeranes en la lista de numeros introducida {array}"
+    
